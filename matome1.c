@@ -9,8 +9,9 @@ int main()
         {
             if (*po <= 'z' && *po >= 'a')
                 num_small += 1;
-            else
+            else if (*po <= 'Z' && *po >= 'A')
                 num_large += 1;
+            else {}
             po++;
         }
     printf("small_character: %d, large_character: %d\n", num_small, num_large);

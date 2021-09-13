@@ -55,6 +55,6 @@ double simpsons_rule_func()
 double culc_func(double x)
 {
     double y;
-    y = (4*x)/(2*x*x+5*x+2);
+    y = (4*x-1)/(2*x*x+5*x+2);
     return y;
 }

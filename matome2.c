@@ -3,11 +3,11 @@ int main()
 {
     double trapezoid_rule_func(), trap_answer;
     trap_answer = trapezoid_rule_func();
-    printf("The integral = %15.7e\n", trap_answer);
+    printf("(台計則)The integral = %15.7e\n", trap_answer);
 
     double simpsons_rule_func(), simp_answer;
     simp_answer = simpsons_rule_func();
-    printf("The integral = %15.7e\n", simp_answer);
+    printf("(シンプソン則)The integral = %15.7e\n", simp_answer);
 }
 
 double trapezoid_rule_func()

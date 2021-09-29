@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+#include <math.h>
 double spread_num(times) {
     int count;
     int count_in = 0;

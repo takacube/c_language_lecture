@@ -18,17 +18,17 @@ double spread_num(times) {
 
 int main(void) {
     double v_10 = spread_num(10);
-    printf("%f\n", v_10);
+    printf("%f\n", fabs(v_10-M_PI));
     double v_100 = spread_num(100);
-    printf("%f\n", v_100);
+    printf("%f\n", fabs(v_100-M_PI));
     double v_1000 = spread_num(1000);
-    printf("%f\n", v_1000);
+    printf("%f\n", fabs(v_1000-M_PI));
     double v_10000 = spread_num(10000);
-    printf("%f\n", v_10000);
+    printf("%f\n", fabs(v_10000-M_PI));
     double v_100000 = spread_num(100000);
-    printf("%f\n", v_100000);
+    printf("%f\n", fabs(v_100000-M_PI));
     double v_1000000 = spread_num(1000000);
-    printf("%f\n", v_1000000);
+    printf("%f\n", fabs(v_1000000-M_PI));
     double v_10000000 = spread_num(10000000);
-    printf("%f\n", v_10000000);
+    printf("%f\n", fabs(v_10000000-M_PI));
 }

@@ -13,7 +13,7 @@ double spread_num(times) {
     }
     return (double)count_in/times*4;
 }
-
+/*
 int main(void) {
     double v_10 = spread_num(10);
     printf("%f : %f\n", v_10, fabs(v_10-M_PI));
@@ -29,4 +29,13 @@ int main(void) {
     printf("%f : %f\n", v_1000000, fabs(v_1000000-M_PI));
     double v_10000000 = spread_num(10000000);
     printf("%f : %f\n", v_10000000, fabs(v_10000000-M_PI));
+}
+*/
+
+int main(void) {
+    int i;
+    for(i=10; i < 100000000; i = i * 10) {
+        double num = spread_num(i);
+        printf("%f : %f\n", num, fabs(num-M_PI));
+    }
 }

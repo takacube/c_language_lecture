@@ -24,4 +24,5 @@ int main(){
         judge_if_prime(subject_num, count);
         count = 0;
     }
+    return 0;
 }

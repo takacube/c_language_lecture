@@ -19,4 +19,5 @@ int main() {
             printf("%d\n", subject_num);
         }
     }
+    return 0;
 }

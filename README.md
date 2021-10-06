@@ -4,6 +4,8 @@
 <img width="953" alt="スクリーンショット 2021-09-13 18 40 21" src="https://user-images.githubusercontent.com/83538851/133061788-8654dbea-8421-4d2f-b905-37190389fc59.png">
 <img width="953" alt="スクリーンショット 2021-09-13 18 40 38" src="https://user-images.githubusercontent.com/83538851/133061802-1605fbe3-853c-4716-b16b-60d6ee1a5406.png">
 <p>--------------------------</p>
-<p>gcc -o matome1.o matome.c \n</p>
+<p>コンパイル</p>
+<p>gcc -o matome1.o matome.c</p>
+<p>実行</p>
 <p>./matome.o</p>
 

@@ -7,7 +7,7 @@ int main() {
     int comper_num;
     for (subject_num=2; subject_num<=N; subject_num++){
         if (flag[subject_num] == 0) {
-            for(comper_num = subject_num+1; comper_num<=N; comper_num++){
+            for(comper_num = subject_num+subject_num; comper_num<=N; comper_num+=subject_num){
                 if(comper_num % subject_num == 0){
                     flag[comper_num] = 1;
                 }

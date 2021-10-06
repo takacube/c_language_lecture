@@ -1,0 +1,27 @@
+#include <stdio.h>
+#define N 10000
+//0~10000の中の素数を見つける
+int judge_if_prime(subject_num, count){
+    if (count == 2){
+            printf("%d\n", subject_num);
+    }
+    return 0;
+}
+int show_num(subject_num) {
+    printf("%d\n", subject_num);
+    return 1;
+}
+int main(){
+    int subject_num, num_to_div;
+    int count=0;
+    int prime_is;
+    for (subject_num=2; subject_num<=N; subject_num++) {
+        for (num_to_div=1; num_to_div<=subject_num; num_to_div++) {
+            if (subject_num%num_to_div == 0) {
+                count++;
+            }
+        }
+        judge_if_prime(subject_num, count);
+        count = 0;
+    }
+}

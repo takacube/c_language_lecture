@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define N 10000
+#define N 100000
 //0~10000の中の素数を見つける
 int show_num(subject_num) {
     printf("%d\n", subject_num);

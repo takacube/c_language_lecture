@@ -5,6 +5,7 @@ int main() {
     int subject_num;
     int flag[N+1] = {0};
     int comper_num;
+    //start from 2 coz if you include 1 all number would be changed
     for (subject_num=2; subject_num<=N; subject_num++){
         if (flag[subject_num] == 0) {
             for(comper_num = subject_num+subject_num; comper_num<=N; comper_num+=subject_num){
@@ -12,7 +13,7 @@ int main() {
                     flag[comper_num] = 1;
                 }
             }
-        }  
+        }
     }
     for (subject_num=2; subject_num<=N; subject_num++){
         if (flag[subject_num] == 0) {

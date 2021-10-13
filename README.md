@@ -8,4 +8,3 @@
 <p>gcc -o matome1.o matome.c</p>
 <p>実行</p>
 <p>./matome.o</p>
-

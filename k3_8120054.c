@@ -1,10 +1,5 @@
 #include <stdio.h>
-/*
-char* init_sentence() {
-    char* text = "MCI AWGG 100% CT HVS GVCHG MCI RCB'H HOYS.";
-    return text;
-}
-*/
+
 int main() {
     int n, char_num;
     for (n=1; n< 25; n++) {

@@ -1,6 +1,5 @@
 #include <stdio.h>
 #define MAX 46
-int fact(int);
 int main() {
     int answer;
     int acum[MAX +1] = {0, 1};

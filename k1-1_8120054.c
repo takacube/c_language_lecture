@@ -6,7 +6,7 @@ double spread_num(times) {
     int count;
     int count_in = 0;
     for(count=1;count<=times;count++) {
-        double x = (double)rand()/RAND_MAX;
+        double x = (double)rand()/RAND_MAX; //RAND_MAX is automatucally defined by stdlib.h library as maximum number which rand() make.
         double y = (double)rand()/RAND_MAX;
         if ((x*x + y*y)<1)
             count_in++;

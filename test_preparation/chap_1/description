@@ -1,1 +1,7 @@
 モンテカルロ法：　乱数を用いてシミュレーションや数値計算を行う手法の総称。
+
+#include <stdlib.h>
+→乱数を生成するrand()を使うために必要。
+
+sqrt(hoge) hogeの平方根を求める。
+to juse sqrt() you have to import <math.h> library.

@@ -3,7 +3,7 @@
 
 int main() {
     int subject_num;
-    int flag[N+1] = {0};
+    int flag[N+1] = {0}; //N+1分だけ0を入れる。
     int comper_num;
     //start from 2 coz if you include 1 all number would be changed
     for (subject_num=2; subject_num<=N; subject_num++){

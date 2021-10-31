@@ -15,6 +15,7 @@ int main(){
     int subject_num, num_to_div;
     int count=0;
     int prime_is;
+    //in main function filter prime and just prime sumber whould make count 2 and make others more than 2;
     for (subject_num=2; subject_num<=N; subject_num++) {
         for (num_to_div=1; num_to_div<=subject_num; num_to_div++) {
             if (subject_num%num_to_div == 0) {

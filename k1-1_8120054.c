@@ -11,7 +11,7 @@ double spread_num(times) {
         if ((x*x + y*y)<1)
             count_in++;
     }
-    return (double)count_in/times*4;
+    return ((double)count_in/times)*4; // π/4 = Nin/Nin
 }
 
 int main(void) {

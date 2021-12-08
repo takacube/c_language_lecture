@@ -53,33 +53,61 @@ int main(void){
 
     //Sort
     int Flag = 1;
-    do {
-        Flag = 0;
-        for(int start=0; start<MAXLINE; start++){
-            if(strcmp(wrd[start],wrd[start+1]) > 0){
-                for(int k=0; k<MAXCHAR_W; k++){
-                    char *tmp;
-                    char *tmp2;
-                    char instant;
-                    tmp = &wrd[start][k];
-                    tmp2 = &wrd[start+1][k];
-                    instant = *&wrd[start+1][k];
-                    *tmp2 = *&wrd[start][k];
-                    *tmp = instant;
+    if(n==1){
+        do {
+            Flag = 0;
+            for(int start=0; start<MAXLINE; start++){
+                if(strcmp(wrd[start],wrd[start+1]) > 0){
+                    for(int k=0; k<MAXCHAR_W; k++){
+                        char *tmp;
+                        char *tmp2;
+                        char instant;
+                        tmp = &wrd[start][k];
+                        tmp2 = &wrd[start+1][k];
+                        instant = *&wrd[start+1][k];
+                        *tmp2 = *&wrd[start][k];
+                        *tmp = instant;
+                    }
+                    Flag++;
+                } else {
+                    continue;
                 }
-                Flag++;
-            } else {
-                continue;
             }
-            printf("this is %s\n", wrd[start]);
-        }
-    } while (Flag != 0);
+        } while (Flag != 0);
+    } else if (n==2){
+        do {
+            Flag = 0;
+            for(int start=0; start<MAXLINE; start++){
+                if(strcmp(wrd[start],wrd[start+1]) < 0){
+                    for(int k=0; k<MAXCHAR_W; k++){
+                        char *tmp;
+                        char *tmp2;
+                        char instant;
+                        tmp = &wrd[start][k];
+                        tmp2 = &wrd[start+1][k];
+                        instant = *&wrd[start+1][k];
+                        *tmp2 = *&wrd[start][k];
+                        *tmp = instant;
+                    }
+                    Flag++;
+                } else {
+                    continue;
+                }
+            }
+        } while (Flag != 0);
+    } else {
+        return -1;
+    }
+    //Display strings after sort
+    printf("String after sort: \n");
+    for(i=0;i<=MAXLINE;i++){
+        printf("%s\n", wrd[i]);
+    }
     //Output file
     printf("Output file name: ");
     fgets(filename,MAXCHAR_F,stdin);
     fp = fopen(filename, "w");
     for(i=0;i<=MAXLINE;i++){
-        printf("%s\n", wrd[i]);
         fprintf(fp, "%s\n", wrd[i]);
     }
     fclose(fp);

@@ -17,25 +17,26 @@ int main(){
     fgets(filename,MAXCHAR_F,stdin);
     filename[strlen(filename)-1]='\0';
     printf("\n");
-
     if((fp=fopen(filename, "r")) == NULL) {
         printf("The input file cannot be opened!\n");
         return -1;
     } else {
         for(i=0;i<=MAXLINE;i++){
             fgets(wrd[i],MAXLINE,fp);
-            //printf("this is test\n");
-            //printf("%s\n", wrd[i]);
+            char *check = strchr(wrd[i], '\n');
+            if(check) {
+                *check = '\0';
+            } else {
+                continue;
+            }
         }
     }
     fclose(fp);
-
     printf("Strings before sort: \n");
     for(i=0;i<=MAXLINE;i++){
-        printf("%s", wrd[i]);
+        printf("%s\n", wrd[i]);
     }
     printf("\n");
-
     // Output file
     printf("Output file name: ");
     fgets(output_filename,MAXCHAR_F,stdin);
@@ -44,12 +45,11 @@ int main(){
         return -1;
     } else {
         for(i=0;i<=MAXLINE;i++){
-            fprintf(outputfile, "%s", wrd[i]);
+            fprintf(outputfile, "%s\n", wrd[i]);
         }
     }
     fclose(outputfile);
-
-
-
+    printf("\n");
+    printf("Finish!\n");
     return 0;
 }

@@ -64,7 +64,6 @@ int main() {
     int Input, Place, Turn = 0, Row, Column;
     char Board[15][15];
     init(&Board[0][0]);
-    dump(Board);
     while(1) { 
         int Input = input_stone(Turn, &Row, &Column);
         if ( Input == 0 ) {

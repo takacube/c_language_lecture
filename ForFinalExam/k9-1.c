@@ -51,6 +51,7 @@ int main(){
     }
     fclose(outputfile);
     printf("\n");
+    printf("%s", wrd[10]);
     printf("Finish!\n");
     return 0;
 }

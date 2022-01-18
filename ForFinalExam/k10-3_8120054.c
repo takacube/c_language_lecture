@@ -57,11 +57,121 @@ int place_stone(int turn, int row, int column, char **board) {
     }
     return 0;
 }
+
 int free_memory(char **board, int height){
     for (int i=0; i<height; i++) {
         free(board[i]); //各行のメモリを解放
     }
     free(board);
+    return 0;
+}
+void reset(int *length, int *distance){
+    *length = 0;
+    *distance = 1;
+}
+
+int judge(int row, int column, char **board) {
+    char stone_type = board[row][column];
+    int length = 0;
+    int distance = 1;
+    //下に
+    while(row-distance >= 0){
+        if(stone_type == board[row-distance][column]){
+            length++;
+            distance++;
+        } else {
+            break;
+        }
+    }
+    if(length >= 4) {
+        return 1;
+    }
+    reset(&length, &distance);
+    while(row+distance < 15){
+        if(stone_type == board[row+distance][column]){
+            length++;
+            distance++;
+        } else {
+            break;
+        }
+    }
+    if(length >= 4) {
+        return 1;
+    }
+    reset(&length, &distance);
+    while(column+distance < 15){
+        if(stone_type == board[row][column+distance]){
+            length++;
+            distance++;
+        } else {
+            break;
+        }
+    }
+    if(length >= 4) {
+        return 1;
+    }
+    reset(&length, &distance);
+    while(row+distance < 15){
+        if(stone_type == board[row][column-distance]){
+            length++;
+            distance++;
+        } else {
+            break;
+        }
+    }
+    if(length >= 4) {
+        return 1;
+    }
+    reset(&length, &distance);
+    while(row+distance < 15 && column+distance < 15 ){
+        if(stone_type == board[row+distance][column+distance]){
+            length++;
+            distance++;
+        } else {
+            break;
+        }
+    }
+    if(length >= 4) {
+        return 1;
+    }
+    reset(&length, &distance);
+    while(row+distance < 15 && column-distance  >= 0 ){
+        if(stone_type == board[row+distance][column-distance]){
+            length++;
+            distance++;
+        } else {
+            break;
+        }
+    }
+    if(length >= 4) {
+        return 1;
+    }
+
+    reset(&length, &distance);
+    while(row-distance >= 0 && column-distance >= 0 ){
+        if(stone_type == board[row-distance][column-distance]){
+            length++;
+            distance++;
+        } else {
+            break;
+        }
+    }
+    if(length >= 4) {
+        return 1;
+    }
+
+    reset(&length, &distance);
+    while(row-distance >= 0 && column+distance < 15 ){
+        if(stone_type == board[row-distance][column+distance]){
+            length++;
+            distance++;
+        } else {
+            break;
+        }
+    }
+    if(length >= 4) {
+        return 1;
+    }
     return 0;
 }
 int main() {
@@ -86,6 +196,15 @@ int main() {
             int is_empty = place_stone(Turn, Row, Column, board); //input_stoneでRowとColumnの値は変更されている。
             if (is_empty == 0) {
                 dump(board);
+                int judgement = judge(Row, Column, board);
+                if(judgement == 1 && Turn == 0){
+                    printf(">Winner: sente(@)");
+                    return 0;
+                } else if (judgement == 1 && Turn == 1) {
+                    printf("Winner: gote(O)");
+                    return 0;
+                } else {}
+
                 if(Turn == 0){
                     Turn = 1;
                 } else {
